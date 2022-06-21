@@ -1,1 +1,26 @@
 @charset "utf-8";
+
+/* 基本 */
+body {
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+/* 横幅と左右の余白 */
+.w-container {
+    width: min(92%, 1166px);
+    margin: auto;
+}
+
+/* ヘッダー */
+.header {
+    height: 112px;
+    background-color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
