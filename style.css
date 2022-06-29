@@ -6,6 +6,14 @@ body {
     background-color: #eeeeee;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+img{
+    display: block;
+}
+
 /* 横幅と左右の余白 */
 .w-container {
     width: min(92%, 1166px);
@@ -23,4 +31,38 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+}
+
+/* ナビゲーションボタン */
+.navbtn {
+    padding: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #aaaaaa;
+    font-size: 30px;
+}
+
+/* ヒーロー */
+.hero {
+    height: 650px;
+    background-image: url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.header-container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.hero h1 {
+    margin-bottom: 42px;
+}
+
+.hero p {
+    margin-bottom: 72px;
 }
