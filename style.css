@@ -1,6 +1,10 @@
 @charset "utf-8";
 
 /* 基本 */
+:root {
+    --v-space: clamp(90px,9vw,120px);
+}
+
 body {
     margin: 0;
     background-color: #eeeeee;
@@ -35,6 +39,7 @@ img{
 .w-container {
     width: min(92%, 1166px);
     margin: auto;
+    position: relative;
 }
 
 /* ヘッダー */
@@ -107,7 +112,12 @@ img{
 /* 画像とテキスト */
 .imgtext {
     padding: clamp(90px, 9vw, 120px) 0;
+    padding: var(--v-space) 0;
     background-color: white;
+}
+
+.imgtext + .imgtext {
+    padding-top: 0;
 }
 
 .imgtext-container {
@@ -122,8 +132,13 @@ img{
         align-items: center;
     }
 
+    .imgtext-container.reverse {
+        flex-direction: row-reverse;
+    }
+
     .imgtext-container > .text {
         flex: 1;
+        min-width: 17em;
     }
 
     .imgtext-container > .img {
@@ -151,5 +166,27 @@ img{
     margin-bottom: 2em;
     color: #707070;
     font-family: "Montserrat";
+    font-size: 18px;
+}
+
+/* 記事一覧 */
+.posts {
+    padding: var(--v-space) 0;
+    background-color: #f3f1ed;
+}
+
+/* パーツの見出し */
+.heading {
+    position: adsolute;
+    top: calc((var(--v-space) + 0.6em) * -1);
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(40px, 5.2vw, 70px);
+    min-height: 0vw;
+    font-weight: 300;
+}
+
+.heading span {
+    display: block;
+    color: #666666;
     font-size: 18px;
 }
