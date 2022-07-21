@@ -165,7 +165,7 @@ img{
     margin-top: 1em;
     margin-bottom: 2em;
     color: #707070;
-    font-family: "Montserrat";
+    font-family: "Montserrat" , sans-serif; 
     font-size: 18px;
 }
 
@@ -173,6 +173,41 @@ img{
 .posts {
     padding: var(--v-space) 0;
     background-color: #f3f1ed;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 25px;
+}
+
+@media (min-width: 768px) {
+    .posts-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 記事一覧の記事 */
+.post a {
+    display: block;
+}
+
+.post h3 {
+    margin: 1em 0 0.5em;
+    font-size: clamp(12px, 2vw, 20px);
+    min-height: 0vw;
+}
+
+.post p {
+    max-width: 20em;
+    font-size: clamp(10px, 1.6vw, 14px);
+    min-height: 0vw;
+}
+
+.posts img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
 }
 
 /* パーツの見出し */
