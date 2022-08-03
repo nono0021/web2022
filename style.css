@@ -12,8 +12,10 @@ body {
     font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, figure {
+h1, h2, h3, h4, h5, h6, p, figure, ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 p {
@@ -224,4 +226,72 @@ img{
     display: block;
     color: #666666;
     font-size: 18px;
+}
+
+/* フッター */
+.footer {
+    padding: 70px 0;
+    background-color: white;
+    color: #707070;
+    font-size: 13px;
+}
+
+.footer-container {
+    display: grid;
+    gap: 50px;
+    justify-items: center;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 20px
+    }
+
+    .footer-container > .footer-site {
+        margin-bottom: 20px;
+    }
+
+    .footer-container > *:not(.footer-sns) {
+        justify-self: start;
+    }
+
+    .footer-container > .footer-sns {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        justify-self:  end;
+        align-self: center;
+    }
+}
+
+/* フッター:SNSメニュー */
+.footer-sns {
+    display: flex;
+    gap: 24px;
+    font-size: 24px;
+}
+
+.footer-sns a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    aspect-ratio: 1 / 1;
+    background-color: #cccccc;
+    color: white;
+    clip-path: circle(50%);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+    .footer-sns a {
+        height: 36px;
+    }
+}
+
+/* フッター：テキストメニュー */
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
